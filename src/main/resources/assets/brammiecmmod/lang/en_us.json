@@ -1,5 +1,8 @@
 {
-  "items.brammiecmmod.raw_cm": "Raw Cum",
-  "items.brammiecmmod.refined_cm" : "Refined Cum",
-  "items.brammiecmmod.cm_ingot" : "Cum Ingot"
+  "item.brammiecmmod.raw_cm": "Raw Cum",
+  "item.brammiecmmod.refined_cm" : "Refined Cum",
+  "item.brammiecmmod.cm_ingot" : "Cum Ingot",
+  "item.brammiecmmod.cm_centrifuge" : "Cum Centrifuge",
+  "block.brammiecmmod.cm_block": "Cum Block",
+  "chat.cm.centrifuge.use": "Dingus"
 }

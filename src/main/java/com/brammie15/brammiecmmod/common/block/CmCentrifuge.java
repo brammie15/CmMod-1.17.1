@@ -4,8 +4,13 @@ import com.brammie15.brammiecmmod.CmMod;
 import com.brammie15.brammiecmmod.core.init.BlockInit;
 import com.brammie15.brammiecmmod.core.init.ItemInit;
 import com.ibm.icu.impl.CalendarAstronomer;
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.ChatType;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -84,7 +89,9 @@ public class CmCentrifuge extends HorizontalDirectionalBlock {
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if(!level.isClientSide){
-            player.addItem(new ItemStack(ItemInit.REFINED_CM.get(),1));
+            player.addItem(new ItemStack(ItemInit.REFINED_CM.get(),2)); //this is 100% sure jank code
+            level.getServer().getPlayerList().broadcastMessage(new TranslatableComponent("chat.cm.centrifuge.use"), ChatType.SYSTEM, Util.NIL_UUID);
+
         }
         return InteractionResult.SUCCESS;
     }
