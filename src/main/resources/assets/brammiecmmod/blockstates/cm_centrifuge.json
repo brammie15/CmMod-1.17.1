@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "brammiecmmod:block/cm_centrifuge" },
+    "facing=south": { "model": "brammiecmmod:block/cm_centrifuge", "y": 180 },
+    "facing=west": { "model": "brammiecmmod:block/cm_centrifuge", "y": 270 },
+    "facing=east": { "model": "brammiecmmod:block/cm_centrifuge", "y": 90 }
+  }
+}

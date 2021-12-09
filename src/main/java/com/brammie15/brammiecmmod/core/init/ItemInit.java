@@ -20,6 +20,7 @@ public class ItemInit {
 
     //Blocks
     public static final RegistryObject<BlockItem> CM_BLOCK = ITEMS.register("cm_block", () -> new BlockItem(BlockInit.CM_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
+    public static final RegistryObject<BlockItem> CM_CENTRIFUGE = ITEMS.register("cm_centrifuge", () -> new BlockItem(BlockInit.CM_CENTRIFUGE.get(), new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
 
 
 }
