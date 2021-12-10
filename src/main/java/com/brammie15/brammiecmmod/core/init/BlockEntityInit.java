@@ -8,7 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public final class BlockEntityInit {
-    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, CmMod.MODID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, CmMod.MOD_ID);
 
     public static final RegistryObject<BlockEntityType<CmCentrifugeBlockEntity>> CM_CENTRIFUGE = BLOCK_ENTITIES.register("cm_centrifuge", () -> BlockEntityType.Builder.of(CmCentrifugeBlockEntity::new, BlockInit.CM_CENTRIFUGE.get()).build(null));
 }
