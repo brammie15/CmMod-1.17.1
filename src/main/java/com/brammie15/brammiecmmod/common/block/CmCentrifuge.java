@@ -1,6 +1,8 @@
 package com.brammie15.brammiecmmod.common.block;
 
 import com.brammie15.brammiecmmod.CmMod;
+import com.brammie15.brammiecmmod.common.block.entity.CmCentrifugeBlockEntity;
+import com.brammie15.brammiecmmod.core.init.BlockEntityInit;
 import com.brammie15.brammiecmmod.core.init.BlockInit;
 import com.brammie15.brammiecmmod.core.init.ItemInit;
 import com.ibm.icu.impl.CalendarAstronomer;
@@ -19,7 +21,11 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -38,7 +44,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class CmCentrifuge extends HorizontalDirectionalBlock {
+public class CmCentrifuge extends HorizontalDirectionalBlock implements EntityBlock  {
     private static final Map<Direction, VoxelShape> SHAPES = new EnumMap<Direction, VoxelShape>(Direction.class);
     public CmCentrifuge(Properties props) {
         super(props);
@@ -94,5 +100,17 @@ public class CmCentrifuge extends HorizontalDirectionalBlock {
 
         }
         return InteractionResult.SUCCESS;
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return BlockEntityInit.CM_CENTRIFUGE.get().create(pos, state);
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        return level.isClientSide() ? null : (level0, pos, state0, blockEntity) -> ((CmCentrifugeBlockEntity) blockEntity).tick();
     }
 }

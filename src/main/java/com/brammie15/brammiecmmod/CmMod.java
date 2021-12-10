@@ -1,5 +1,6 @@
 package com.brammie15.brammiecmmod;
 
+import com.brammie15.brammiecmmod.core.init.BlockEntityInit;
 import com.brammie15.brammiecmmod.core.init.BlockInit;
 import com.brammie15.brammiecmmod.core.init.ItemInit;
 import net.minecraft.core.Direction;
@@ -34,6 +35,7 @@ public class CmMod
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         BlockInit.BLOCKS.register(bus);
         ItemInit.ITEMS.register(bus);
+        BlockEntityInit.BLOCK_ENTITIES.register(bus);
     }
     public static VoxelShape calculateShapes(Direction to, VoxelShape shape) {
         final VoxelShape[] buffer = { shape, Shapes.empty() };
