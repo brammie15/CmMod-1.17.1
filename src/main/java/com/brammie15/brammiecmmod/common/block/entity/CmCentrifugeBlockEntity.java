@@ -18,10 +18,12 @@ public class CmCentrifugeBlockEntity extends BlockEntity {
     public void tick(){
         if(!level.isClientSide){
             if(height > 254){
-                height  = 0;
+                height  = 2;
 
             }
-            level.setBlock(this.worldPosition.above(height), Blocks.DIAMOND_BLOCK.defaultBlockState(), 3);
+            if(level.getBlockState(this.worldPosition.above(height)).getBlock() == Blocks.AIR){
+                level.setBlock(this.worldPosition.above(height), Blocks.DIAMOND_BLOCK.defaultBlockState(), 3);
+            }
             height++;
         }
     }

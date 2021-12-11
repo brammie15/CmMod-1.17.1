@@ -3,6 +3,23 @@
   "item.brammiecmmod.refined_cm" : "Refined Cum",
   "item.brammiecmmod.cm_ingot" : "Cum Ingot",
   "item.brammiecmmod.cm_centrifuge" : "Cum Centrifuge",
+
+  "item.brammiecmmod.cm_beef": "Cum Beef",
+  "item.brammiecmmod.cm_pork": "Cum Pork",
+  "item.brammiecmmod.cm_chicken": "Cum Chicken",
+  "item.brammiecmmod.cm_mutton": "Cum Mutton",
+  "item.brammiecmmod.cm_rabbit": "Cum Rabbit",
+
+
+
+  "block.brammiecmmod.cm_centrifuge": "Cum Centrifuge",
   "block.brammiecmmod.cm_block": "Cum Block",
+  "block.brammiecmmod.cmium_ore": "Cumium Ore",
+
+
+
+
+
+
   "chat.cm.centrifuge.use": "Dingus"
 }

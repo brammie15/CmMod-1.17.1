@@ -16,4 +16,5 @@ public class BlockInit {
     public static final RegistryObject<Block> CM_BLOCK = BLOCKS.register("cm_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK)));
 
     public static final RegistryObject<CmCentrifuge> CM_CENTRIFUGE = BLOCKS.register("cm_centrifuge", () -> new CmCentrifuge(BlockBehaviour.Properties.copy(Blocks.BREWING_STAND)));
+    public static final RegistryObject<Block> CMIUM_ORE = BLOCKS.register("cmium_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
 }

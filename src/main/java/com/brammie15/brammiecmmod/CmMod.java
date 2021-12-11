@@ -2,7 +2,9 @@ package com.brammie15.brammiecmmod;
 
 import com.brammie15.brammiecmmod.core.init.BlockEntityInit;
 import com.brammie15.brammiecmmod.core.init.BlockInit;
+import com.brammie15.brammiecmmod.core.init.EffectInit;
 import com.brammie15.brammiecmmod.core.init.ItemInit;
+import com.mojang.blaze3d.shaders.Effect;
 import net.minecraft.core.Direction;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -20,5 +22,6 @@ public class CmMod {
         BlockInit.BLOCKS.register(bus);
         ItemInit.ITEMS.register(bus);
         BlockEntityInit.BLOCK_ENTITIES.register(bus);
+        EffectInit.EFFECTS.register(bus);
     }
 }
