@@ -1,6 +1,7 @@
 package com.brammie15.brammiecmmod.core.init;
 
 import com.brammie15.brammiecmmod.CmMod;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -9,6 +10,8 @@ import net.minecraft.world.item.Items;
 import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.function.Supplier;
 
 public class ItemInit {
     //make a deferredRegister for items
@@ -19,7 +22,7 @@ public class ItemInit {
     public static final RegistryObject<Item> REFINED_CM = ITEMS.register("refined_cm", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
     public static final RegistryObject<Item> CM_INGOT = ITEMS.register("cm_ingot", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
 
-    public static final RegistryObject<Item> CM_BEEF = ITEMS.register("cm_beef", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE).food(Items.BEEF.getFoodProperties())));
+    public static final RegistryObject<Item> CM_BEEF = ITEMS.register("cm_beef", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE).food(new FoodProperties.Builder().effect(() -> new MobEffectInstance(EffectInit.CM_ENRICHED_EFFECT.get()),100.0f).nutrition(3).saturationMod(0.3F).meat().build())));
     public static final RegistryObject<Item> CM_CHICKEN = ITEMS.register("cm_chicken", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE).food(Items.CHICKEN.getFoodProperties())));
     public static final RegistryObject<Item> CM_PORKCHOP = ITEMS.register("cm_porkchop", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE).food(Items.PORKCHOP.getFoodProperties())));
     public static final RegistryObject<Item> CM_RABBIT = ITEMS.register("cm_rabbit", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE).food(Items.RABBIT.getFoodProperties())));
